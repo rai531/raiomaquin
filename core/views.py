@@ -20,7 +20,7 @@ def mecanicos(request):
     return render(request,'mecanicos.html')
 
 def servicios(request):
-    return render(request,'servicios')
+    return render(request,'servicios.html')
 
 
 

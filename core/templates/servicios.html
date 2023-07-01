@@ -1,3 +1,7 @@
+
+{%load static%}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,36 +17,39 @@
   <title>TALLER MAKWEEN</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="js/bootstrap.min.js">
-  <link rel="stylesheet" href="css/interfaz.css">
-
+  <link rel="stylesheet" href="{% static 'css/interfaz.css' %}">
 </head>
 
 <body>
   <header class="header">
     <div class="logo">
-      <img src="img/logo.jpg" alt="logo de la pagina">
+      <img src="{%static 'img/logo.jpg' %}" alt="logo de la pagina">
 
     </div>
-    <nav>
+    
+    <nav >
+     
       <ul class="nav-links">
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="mecanicos.html">MECANICOS</a></li>
-        <li><a href="servicios.html">SERVICIOS</a></li>
-        <li><a href="atenciones.html">ATENCIONES</a></li>
+        <li><a href="/..">INICIO</a></li>
+        <li><a href="mecanicos">MECANICOS</a></li>
+        <li><a href="servicios">SERVICIOS</a></li>
+        <li><a href="atenciones">ATENCIONES</a></li>
       </ul>
+    
     </nav>
-    <a href="login_acceso.html" class="btn"><button>REGISTRAR</button></a>
+    <a href="login_acceso" class="btn"><button>REGISTRAR</button></a>
     <a onclick="openNav()" class="menu"><button>MENU</button></a>
     <div class="overlay" id="mobile-menu">
       <a onclick="closeNav()" href="" class="close">&times;</a>
       <div class="overlay-content">
-        <a href="index.html">INICIO</a>
-        <a href="mecanicos.html">MECANICOS</a>
-        <a href="servicios.html">SERVICIOS</a>
-        <a href="atenciones.html">ATENCIONES</a>
-        <a href="contacto.html">Registrar</a>
+        <a href="/..">INICIO</a>
+        <a href="mecanicos">MECANICOS</a>
+        <a href="servicios">SERVICIOS</a>
+        <a href="atenciones">ATENCIONES</a>
+
       </div>
     </div>
+
 
 
 
@@ -51,24 +58,21 @@
 
   <div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="servicios.html">
-          <img src="img/carrusel1.jpg" class="d-block w-100" alt="...">
+        <a href="servicios">
+          <img src="{%static 'img/carrusel1.jpg' %}" class="d-block w-100" alt="...">
           </a>
       </div>
       <div class="carousel-item">
-        <img src="img/carrusel2.jpg" class="d-block w-100" alt="...">
+        <img src="{%static 'img/carrusel2.jpg' %}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="img/carrusel3.jpg" class="d-block w-100" alt="...">
+        <img src="{%static 'img/carrusel3.jpg' %}" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -92,7 +96,7 @@
     <br>
     <div class="row">
       <div class="col">
-        <img class="imagenesServicios" src="img/cambioMotor.jpg" alt="imagen del cambio de motor">
+        <img class="imagenesServicios" src="{%static 'img/cambioMotor.jpg' %}" alt="imagen del cambio de motor">
         <br>
         <h4>CAMBIOS DE MOTOR</h4>
         <P>El cambio de motor es una tarea muy complicada, contamos con los elementos necesarios para darle la confianza
@@ -101,7 +105,7 @@
         <p></p>
       </div>
       <div class="col">
-        <img class="imagenesMecanicos" src="img/cambioAceite.jpg" alt="imagen de cambio de aceite">
+        <img class="imagenesMecanicos" src="{%static 'img/cambioAceite.jpg' %}" alt="imagen de cambio de aceite">
         <br>
         <h4>CAMBIOS DE ACEITE</h4>
         <P>En nuestro taller mecanico cuidamos la integridad de su vehiculo, el cambio de aceite es un proceso realmente
@@ -109,7 +113,7 @@
         <p>El precio del servicio parte desde los 41.000 pesos, dependiendo del producto que usted elija</p>
       </div>
       <div class="col">
-        <img class="imagenesServicios" src="img/cambioNeumaticos.jpg" alt="imagen del cambio de neumaticos">
+        <img class="imagenesServicios" src="{%static 'img/cambioNeumaticos.jpg' %}" alt="imagen del cambio de neumaticos">
         <br>
         <h4>CAMBIOS DE NEUMATICOS</h4>
         <P>El cambio de neumaticos es muy importante para la seguridad al momento de manejar, siempre contamos con los
@@ -117,7 +121,7 @@
         <p>El precio del servisio parte desde los 12.000 pesos, esto es por cada neumatico que se cambie</p>
       </div>
       <div class="col">
-        <img class="imagenesMecanicos" src="img/cambioLuces.jpg" alt="imagen de cambio LUCES">
+        <img class="imagenesMecanicos" src="{%static 'img/cambioLuces.jpg' %}" alt="imagen de cambio LUCES">
         <br>
         <h4>CAMBIOS DE LUCES</h4>
         <P>El cambio de luces es un proceso muy delicado, para el cual nuestros mecanicos cuentan con todos los
@@ -125,7 +129,7 @@
         <p>El precio del servicio parte desde los 41.000 pesos, este precio depende del foco que usted necesite cambiar</p>
       </div>
       <div class="col">
-        <img class="imagenesMecanicos" src="img/carWash.jpg" alt="IMAGEN CAR WASH">
+        <img class="imagenesMecanicos" src="{%static 'img/carWash.jpg' %}" alt="IMAGEN CAR WASH">
         <br>
         <h4>CAR WASH</h4>
         <P>Nuestro servicio CAR WASH es uno de los mejores del pais, contamos con una cabina totalmente especializada para el lavado de autos</P>
