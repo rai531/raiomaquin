@@ -1,9 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib import messages
 from .models import Vehiculo, Categoria
 from .forms import VehiculoForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+
 
 
 # Create your views here.
+
 
 def atenciones(request):
    
@@ -15,8 +20,8 @@ def index(request):
 def contacto(request):
     return render(request,'contacto.html')
 
-def login_acceso(request):
-    return render(request,'login_acceso.html')
+def login(request):
+    return render(request,'registration/login.html')
 
 def mecanicos(request):
     return render(request,'mecanicos.html')
@@ -27,13 +32,21 @@ def servicios(request):
 def vehiculos(request):
     return render(request, 'vehiculos.html')
 
+@login_required
 def agregar(request):
-    return render(request, 'agregar.html')
+     if request.method == 'POST':
+        form = VehiculoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Los datos han sido guardados con éxito.')
+            return render(request, 'agregar.html')
+        
+        
 
 
-
-
-
+def salir(request):
+    logout(request)
+    return redirect('login')
 
 
 

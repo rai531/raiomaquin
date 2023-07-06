@@ -1,4 +1,4 @@
-const email = document.getElementById("email")
+const email = document.getElementById("username")
 const password = document.getElementById("password")
 const form = document.getElementById("form")
 const warnings = document.getElementById("warnings")
