@@ -18,3 +18,21 @@ form.addEventListener("submit", e=>{
     }
 
 })
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar la redirección por defecto
+  
+    // Obtener los valores de usuario y contraseña
+    var username = document.querySelector('input[name="PanConQueso"]').value;
+    var password = document.querySelector('input[name="pan123456"]').value;
+  
+    // Realizar la validación (aquí debes implementar tu lógica de validación)
+    if (username === 'PanConQueso' && password === 'pan123456') {
+      // Enviar el formulario si los datos son correctos
+      this.submit();
+    } else {
+      // Mostrar un mensaje de error o realizar otra acción
+      alert('Usuario o contraseña incorrectos');
+    }
+  });
+  
